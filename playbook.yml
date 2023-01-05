@@ -1,0 +1,8 @@
+- name: restart datadog agent on windows
+  hosts: os_Windows
+  tasks:
+    - name: Restart Datadog Agent
+      ansible.windows.win_service:
+        name: DatadogAgent
+        state: restarted
+        force_dependent_services: yes
